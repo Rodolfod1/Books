@@ -1,0 +1,19 @@
+{
+  "name": "google-books",
+  "version": "1.0.0",
+  "description": "MERN Stack for google books",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Rodolfod1/Books.git"
+  },
+  "author": "Rodolfo Diaz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Rodolfod1/Books/issues"
+  },
+  "homepage": "https://github.com/Rodolfod1/Books#readme"
+}
