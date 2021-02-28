@@ -13,7 +13,7 @@ app.use(apiRouter);
 
 // configuring AtlasDB connection for Heroku Deployment 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/movieapp",
+    process.env.MONGODB_URI || "mongodb://localhost/books",
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
