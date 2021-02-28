@@ -4,9 +4,9 @@ const bookController = {
  getBook : (req,res) => {
     const BookTitle= req.params.BookTitle;
     const ApiURL="https://www.googleapis.com/books/v1/volumes?q="
-    axios.get(ApiURL+title)
+    axios.get(ApiURL+BookTitle)
     .then(results => {
-        results.json(results.data)
+        res.json(results.data)
         console.log(results.data);
     })
     .catch((err)=>{
