@@ -1,5 +1,4 @@
 const router = require("express").Router()
-const DbBookController = require("../../controllers/DbBookController")
 const bookController = require ("../../controllers/DbBookController")
 
 // to match it with "/api/books"
