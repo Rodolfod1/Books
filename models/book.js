@@ -13,6 +13,9 @@ const BookScheema = new.mongoose.Schema({
     },
     synopsis: {
         type: String
+    },
+    link :{
+        type: String 
     }
 
 });
