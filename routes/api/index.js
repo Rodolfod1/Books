@@ -1,13 +1,13 @@
 //route manager for both controllers and routes ExtAPI and the Database 
-const path -require("path");
+const path = require("path");
 const router = require("express").Router();
 const bookRoutes = require("./Books")
-const ExtRoutes = require("./Gbooks")
+const ExtRoutes= require("./gApi");
 
 //book routes 
 router.use("/Books", bookRoutes);
 //external APi
-router.use("/Gbooks",ExtRoutes )
+router.use("/gApi",ExtRoutes )
 
 // For anything else, render the html page
 router.use(function(req, res) {

@@ -2,7 +2,7 @@
 
 const axios = require ("axios");
 
-const bookController = {
+const ExtApiController = {
  getBook : (req,res) => {
     const BookTitle= req.params.BookTitle;
     const ApiURL="https://www.googleapis.com/books/v1/volumes?q="
@@ -17,4 +17,4 @@ const bookController = {
  }
 };
 
-module.exports = bookController
+module.exports = ExtApiController
