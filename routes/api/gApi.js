@@ -3,7 +3,7 @@ const router = require("express").Router();
 const ExtController = require ("../../controllers/ExtApiController");
 
 router
-    .route("/")
+    .route("/:BookTitle")
     .get(ExtController.getBook);
 
     module.exports = router;
