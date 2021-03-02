@@ -20,14 +20,14 @@ const [singleBook, setSingleBook]= useState([{}])
         )
         .catch(err => console.log(err) );
   }
-console.log(books);
+
 
 const SearchBook = a =>{
     const BookTitle = a.target.value.toLowerCase();
     console.log(BookTitle);
     Api.getBook(BookTitle)
         .then(res => 
-            setSingleBook(res.data))
+            setSingleBook(res.data.items))
             .catch(err => console.log(err))
 
 }
