@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Api from "../Utils/Api"
 import SearchItem from "../Components/SearchItem"
+import  Card from "../Components/Card"
+import List from "../Components/List"
 
 
 const NewSearch = () => {
@@ -41,34 +43,41 @@ console.log(singleBook);
        
 
         <div>
-        <div className="card" style={{width: 18+ "rem"}}>
+        {/* <div className="card" style={{width: 18+ "rem"}}>
   <img src="..." className="card-img-top" alt="..."/>
   <div className="card-body">
     <h5 className="card-title">Card title</h5>
     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
     <a href="#" className="btn btn-primary">Go somewhere</a>
   </div>
-</div>   
+</div>    */}
+
             {singleBook.items !==undefined && singleBook.items[0].volumeInfo.description !==undefined ? (
-                singleBook.items.map(({volumeInfo,id,searchInfo}) => {
-                    return(
-                            console.log(volumeInfo.description)
-                            
+               
+                      singleBook.items.map(({volumeInfo,id}) => {
+                          return (
+                            <Card
+                            key={id}
+                                title={volumeInfo.title}
+                                authors={volumeInfo.authors}
+                                description={volumeInfo.description}
+                                 image={volumeInfo.imageLinks.thumbnail}
+
+                   
+                      />
+
+                          )
+                      })
+            ): (<></>)
+    }
+                         
 
 
 
+               
+        
 
-                    
-                        // <h1>{volumeInfo.title}</h1>
-                        // <h1>{volumeInfo.authors}</h1>
-                        // <h1>{volumeInfo.categories}</h1>
-                        // <h1>{volumeInfo.description}</h1>
-                        
-                    )
-                })
-            ):
-            ( <></>)
-        }    
+  
 
 
 
