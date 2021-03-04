@@ -3,6 +3,8 @@ import Api from "../Utils/Api"
 import SearchItem from "../Components/SearchItem"
 import  Card from "../Components/Card"
 import List from "../Components/List"
+import Row from "../Components/Row"
+import Col from "../Components/Col"
 
 
 const NewSearch = () => {
@@ -37,52 +39,34 @@ console.log(singleBook);
 
     return (
         <div>
-            <SearchItem SearchBook={SearchBook} />  
-
-
-       
-
-        <div>
-        {/* <div className="card" style={{width: 18+ "rem"}}>
-  <img src="..." className="card-img-top" alt="..."/>
-  <div className="card-body">
-    <h5 className="card-title">Card title</h5>
-    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
-  </div>
-</div>    */}
-
+            <SearchItem SearchBook={SearchBook} />         
+    <Row>
+      <Col> 
+      <h1>Something cool</h1>
             {singleBook.items !==undefined && singleBook.items[0].volumeInfo.description !==undefined ? (
-               
+                    
                       singleBook.items.map(({volumeInfo,id}) => {
                           return (
+                            
                             <Card
                             key={id}
                                 title={volumeInfo.title}
                                 authors={volumeInfo.authors}
+                                link={volumeInfo.previewLink}
                                 description={volumeInfo.description}
                                  image={volumeInfo.imageLinks.thumbnail}
 
                    
                       />
+                      
 
                           )
                       })
             ): (<></>)
     }
-                         
-
-
-
-               
-        
-
-  
-
-
-
-                
-            </div>
+                  
+                  </Col>
+                  </Row>
       
             
         </div>

@@ -1,0 +1,137 @@
+/* fonts for title
+font-family: 'Kanit', sans-serif;
+content
+font-family: 'Noto Sans KR', sans-serif; */
+
+*,*::before,*::after {
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+body{
+    background-color: #FFFFFF;
+ 
+}
+.navbar {
+    background-color: #353338;
+   
+}
+.principal{
+    padding: 0%;
+    margin: 0%;
+}
+
+
+h1{
+    font-family: 'Kanit', sans-serif;
+}
+
+.myflag{
+    opacity: 50%;
+}
+.myflag:hover{
+    opacity: 100%;
+
+}
+
+.jumbotron {
+  padding: 0%;
+  margin-left: 20px;
+  margin-right: 20px;
+     background-color: transparent; 
+    color: #B9B3C4; 
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.nav-link{
+    /* margin-left: 0%;
+    margin-right: 0%; */
+    padding: 8px;
+    color: #B9B3C4; 
+}
+
+@media screen and (min-width:700px) {
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3,auto);
+        gap: 10px;
+        }
+ }
+ ul{
+     gap: 30px;
+     margin-bottom: 0%;
+     margin-top: 0%;
+     /* font-size: smaller; */
+ }
+
+.d-block{
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
+  
+ 
+}
+.img-car{
+    opacity: 60%;
+}
+.wrapper{
+    background-color: #3D4F78;
+    width: 6rem;
+  }
+  
+.hide {
+        display: none;
+    }
+i, .pf-container{
+    color: #B9B3C4; 
+}
+ .drk{
+     color: black;
+ }
+.lgt{
+    font-weight: bolder;
+    color: whitesmoke;
+}
+
+.row-space{
+    margin-bottom: 10px;
+}
+.card {
+    background-color: transparent;
+    border-radius: 1%;
+    box-shadow:0 0 4px 4px;
+    color:#B9B3C4;
+    margin-top: 20px;
+    text-align: center;
+}
+h3 {
+    font-size: 16px;
+}
+/* my personal photo  */
+.rounded-circle{
+    width: 40px;
+}
+.title {
+    text-align: center;
+    font-family: 'Kanit', sans-serif;
+
+}
+
+.skills{
+    
+    /* background-color: #B9B3C499; */
+    background-color: transparent;
+    border-radius: 1%;
+    box-shadow:0 0 4px 4px;
+    color:#B9B3C4;
+    
+}
+
+.btn-secondary {
+    margin-left: 30px;
+    background-color:  #B9B3C4;
+    border-radius: 4%;
+    box-shadow:0 0 1px 1px;
+    color: black;
+}
