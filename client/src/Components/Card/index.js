@@ -3,9 +3,9 @@ import "../Style/style.css"
 
 const Card = (props) => {
 
-  const AddBook = (key) =>{
-  
-    console.log("mi libro"+ key);
+  const AddBook = () => {
+    const e=props.clave
+    console.log("mi libro"+ e);
 
   }
     return (
@@ -17,7 +17,7 @@ const Card = (props) => {
           <a href={props.link} target="Blank">Preview Book</a>
           <p className="card-text">{props.description}</p>
          
-          <a href="#" className="btn btn-primary" onClick={AddBook}>Add To Library</a>
+          <a href="#" className="btn btn-primary" onClick={()=> AddBook(props.clave)}>Add To Library</a>
         </div>
       </div>
     )
