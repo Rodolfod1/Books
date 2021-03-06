@@ -10,7 +10,8 @@ font-family: 'Noto Sans KR', sans-serif; */
 }
 
 body{
-    background-color: #FFFFFF;
+    background-color: #000000;
+    display: gird;
  
 }
 .navbar {
@@ -95,6 +96,7 @@ i, .pf-container{
 }
 
 .row-space{
+    display: inline-block;
     margin-bottom: 10px;
 }
 .card {
@@ -128,10 +130,11 @@ h3 {
     
 }
 
-.btn-secondary {
-    margin-left: 30px;
-    background-color:  #B9B3C4;
+.btn-primary {
+    margin:10px,0,10px,0;
+    background-color:  #5b0eeb;
     border-radius: 4%;
     box-shadow:0 0 1px 1px;
-    color: black;
+    color: #FFFFFF;
+    text-decoration: none;
 }

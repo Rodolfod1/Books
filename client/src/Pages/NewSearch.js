@@ -55,6 +55,7 @@ console.log(singleBook);
                                 link={volumeInfo.previewLink}
                                 description={volumeInfo.description}
                                  image={volumeInfo.imageLinks.thumbnail}
+                                 Num={id}
 
                    
                       />
