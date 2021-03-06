@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import Api from "../Utils/Api"
 import SearchItem from "../Components/SearchItem"
 import  Card from "../Components/Card"
-import List from "../Components/List"
 import Row from "../Components/Row"
 import Col from "../Components/Col"
+import { PromiseProvider } from "mongoose";
 
 
 const NewSearch = () => {
@@ -25,7 +25,7 @@ const [singleBook, setSingleBook]= useState([{}])
         .catch(err => console.log(err) );
   }
 
-
+// function to search books and set the state 
 const SearchBook = a =>{
     const BookTitle = a.target.value.toLowerCase();
     console.log(BookTitle);
@@ -35,14 +35,20 @@ const SearchBook = a =>{
             .catch(err => console.log(err))
 
 }
-console.log(singleBook);
+// function to save or add the book to the library 
+const AddBook = id => {
+    console.log("mi libro"+ id);
+
+  }
+
+
 
     return (
         <div>
             <SearchItem SearchBook={SearchBook} />         
     <Row>
       <Col> 
-      <h1>Something cool</h1>
+  {/* here  we use the map function   to loop thru the array */}
             {singleBook.items !==undefined && singleBook.items[0].volumeInfo.description !==undefined ? (
                     
                       singleBook.items.map(({volumeInfo,id}) => {
@@ -55,12 +61,8 @@ console.log(singleBook);
                                 link={volumeInfo.previewLink}
                                 description={volumeInfo.description}
                                  image={volumeInfo.imageLinks.thumbnail}
-                                clave={id}
-
-                   
+                                AddBook={()=>AddBook(id)}                
                       />
-                      
-
                           )
                       })
             ): (<></>)
