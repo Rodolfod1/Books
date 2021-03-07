@@ -4,7 +4,7 @@ import SearchItem from "../Components/SearchItem"
 import  Card from "../Components/Card"
 import Row from "../Components/Row"
 import Col from "../Components/Col"
-import { PromiseProvider } from "mongoose";
+import "../Components/Style/style.css"
 
 
 const NewSearch = () => {
@@ -40,26 +40,37 @@ const SearchBook = a =>{
 const AddBook = id => {
     Api.getBook(id)
     .then(res => {
-        const b=res.data.items[0].volumeInfo
+        const b=res.data.items[0].volumeInfo;
+        Api.saveBook({ title:b.title,
+             author:b.authors[0],
+            poster:b.imageLinks.thumbnail,
+            synopsis:b.description,
+            link:b.previewLink,
+            id:id})
+     .then(res=> { 
+         console.log(res);
+         if (res.status === 200){
+            setSelected({...selected, Title:res.data.title, Author:res.data.author})
+         }
+         else {
+             console.log("something went wrong posting");
+         }
+        })
+    .catch((err)=>console.log(err))
         
-        setSelected({...selected, 
-                    title:b.title,
-                    author:b.authors,
-                    poster:b.imageLinks.thumbnail,
-                    synopsis:b.description,
-                    link:b.previewLink});
-        
-                    console.log(selected)
-    })
-    .catch((err) => console.log(err))  
+        })
+    .catch((err)=>{console.log(err)})
+
+
+}
     
-  }
-
-
+                    
+ 
 
     return (
         <div>
-            <SearchItem SearchBook={SearchBook} />         
+            <SearchItem SearchBook={SearchBook} />  
+            <h1 className="action">{selected.Title} by {selected.Author} has been added to your library</h1>       
     <Row>
       <Col> 
   {/* here  we use the map function   to loop thru the array */}

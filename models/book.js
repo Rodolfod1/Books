@@ -8,7 +8,7 @@ const BookSchema = new Schema({
         required: true
     },
     author: {
-        type: String 
+        type: String
     },
     poster: {
         type: String 
@@ -18,6 +18,9 @@ const BookSchema = new Schema({
     },
     link :{
         type: String 
+    },
+    id: {
+        type: String
     }
 
 });
