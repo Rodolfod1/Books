@@ -9,18 +9,19 @@ import { PromiseProvider } from "mongoose";
 
 const NewSearch = () => {
 //declaring hooks 
-const [books, setBooks] = useState([{}])
+const [book, setBook] = useState([{}])
 const [singleBook, setSingleBook]= useState([{}])
+const [selected, setSelected]=useState([{}])
 
   // Load all books and store them with setBooks
   useEffect(() => {
-    loadBooks()
+    loadBook()
   }, [])
 
-   const loadBooks = () => {
+   const loadBook = () => {
        Api.getBook()
       .then (res=> 
-            setBooks(res.data)
+            setBook(res.data)
         )
         .catch(err => console.log(err) );
   }
@@ -37,8 +38,21 @@ const SearchBook = a =>{
 }
 // function to save or add the book to the library 
 const AddBook = id => {
-    console.log("mi libro"+ id);
-
+    Api.getBook(id)
+    .then(res => {
+        const b=res.data.items[0].volumeInfo
+        
+        setSelected({...selected, 
+                    title:b.title,
+                    author:b.authors,
+                    poster:b.imageLinks.thumbnail,
+                    synopsis:b.description,
+                    link:b.previewLink});
+        
+                    console.log(selected)
+    })
+    .catch((err) => console.log(err))  
+    
   }
 
 
