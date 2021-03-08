@@ -2,27 +2,36 @@ import logo from './logo.svg';
 import './App.css';
 import Home from "./Pages/Home"
 import NewSearch from "./Pages/NewSearch"
+import Library from "./Pages/Library"
+import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom"
+import Hero from './Components/Hero';
+import Footer from "./Components/Footer"
+
+
 
 function App() {
   return (
-    <div className="App">
-      <NewSearch />
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    <Home />
-    </div>
+      <Router>
+
+        <div className="App">
+          <Hero />
+          <Switch>
+            <Route exact path={["/", "/Home"]}>
+              <Home />
+            </Route>
+            <Route exact path={["/Books","/Library"]}>
+              <Library/>
+            </Route>
+            <Route  exact path="/Search">
+              <NewSearch />
+            </Route>
+          </Switch>
+        </div>
+        <Footer />
+      </Router>
+
+
+
   );
 }
 

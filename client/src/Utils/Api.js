@@ -11,7 +11,7 @@ import axios from "axios";
 
     //get all stored books on the database 
      getSavedBooks :  () =>{
-        axios.get("/api/Books")
+        return axios.get("/api/Books")
     },
 
     //saves books on the database 

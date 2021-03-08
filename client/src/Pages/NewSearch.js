@@ -5,6 +5,7 @@ import  Card from "../Components/Card"
 import Row from "../Components/Row"
 import Col from "../Components/Col"
 import "../Components/Style/style.css"
+import {Link} from "react-router-dom"
 
 
 const NewSearch = () => {
@@ -96,7 +97,12 @@ const AddBook = id => {
                   </Col>
                   </Row>
       
-            
+                  <Link className="links" to="/home">
+                 <h2>Home</h2>
+                     </Link> 
+                     <Link className="links" to="/library">
+                 <h2>View Library</h2>
+                     </Link>   
         </div>
     )
 }
