@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Api from "../Utils/Api"
 import Hero from "../Components/Hero"
 import {Link} from "react-router-dom"
+import Card from "../Components/Card";
+import "../Components/Style/style.css"
 
 
 const Library = () => {
@@ -23,6 +25,14 @@ const loadAll = () =>{
     .catch((err)=>{console.log(err)})
 }
 
+const DelBook = (id) => {
+    Api.deleteBook(id)
+    .then (res => { 
+        console.log(res)
+        
+} )
+    .catch((err)=>{console.log(err)})
+}
 
 
     return (
@@ -36,6 +46,30 @@ const loadAll = () =>{
                      <Link className="links" to="/search">
                  <h2>Search for New Book</h2>
                      </Link> 
+
+       {mybooks !==undefined && mybooks[0].title !==undefined ?(
+           mybooks.map(({title,author,id,poster,link})=>{
+            return (  
+            <Card
+               Key={id}
+               title={title}
+               authors={author}
+               image={poster}
+               link={link}
+               legend=" Remove From Library"
+                                action={()=>DelBook(id)}  
+
+               />
+            )
+
+           })
+       ): (<></>)
+       }
+
+
+
+
+                    
             
         </div>
     )

@@ -12,7 +12,5 @@ router.route("/:id")
     .put(bookController.update)
     .delete(bookController.remove);
 
-// router.route("/results/:BookTile")
-//     .get(bookController.getBook)
 
 module.exports = router

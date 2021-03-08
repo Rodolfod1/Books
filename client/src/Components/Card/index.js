@@ -1,13 +1,9 @@
 import React from 'react'
 import "../Style/style.css"
+import ActionBtn from "../ActionBtn"
 
 const Card = (props) => {
 
-  // const AddBook = () => {
-  //   const e=props.clave
-  //   console.log("mi libro"+ e);
-
-  // }
     return (
         <div className="card" style={{width: 18 +"rem"}}>
         <img src={props.image} className="card-img-top" alt="bookImage"/>
@@ -16,10 +12,8 @@ const Card = (props) => {
           <h5 className="card-title">{props.authors}</h5>
           <a href={props.link} target="Blank">Preview Book</a>
           <p className="card-text">{props.description}</p>
-          
+         <ActionBtn onClick={props.action}>{props.legend}</ActionBtn>
          
-          {/* <a href="#" className="btn btn-primary" onClick={()=> AddBook(props.clave)}>Add To Library</a> */}
-          <a href="#" className="btn btn-primary" onClick={props.AddBook}>Add To Library</a>
         </div>
       </div>
     )

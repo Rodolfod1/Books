@@ -23,7 +23,8 @@ import axios from "axios";
 
     // removes book from database 
      deleteBook : (id) =>{
-        axios.delete("/api/Books/" + id)
+         console.log("attempting to delete "+id);
+        return axios.delete("/api/Books/" + id)
     }
  }
 

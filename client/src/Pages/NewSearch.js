@@ -6,6 +6,7 @@ import Row from "../Components/Row"
 import Col from "../Components/Col"
 import "../Components/Style/style.css"
 import {Link} from "react-router-dom"
+import ActionBtn from "../Components/ActionBtn";
 
 
 const NewSearch = () => {
@@ -80,15 +81,19 @@ const AddBook = id => {
                       singleBook.items.map(({volumeInfo,id}) => {
                           return (
                             
-                            <Card
+                        <Card
                             key={id}
                                 title={volumeInfo.title}
                                 authors={volumeInfo.authors}
                                 link={volumeInfo.previewLink}
                                 description={volumeInfo.description}
                                  image={volumeInfo.imageLinks.thumbnail}
-                                AddBook={()=>AddBook(id)}                
+                                 legend="Add To Library"
+                                action={()=>AddBook(id)}                
                       />
+               
+                            
+                           
                           )
                       })
             ): (<></>)
