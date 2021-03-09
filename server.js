@@ -8,11 +8,14 @@ const apiRouter = require ('./routes');
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
-app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
-
 app.use(express.json());
 app.use(apiRouter);
+
+// app.use(express.urlencoded({ extended: true }));
+
+
+
 
 // configuring AtlasDB connection for Heroku Deployment 
 mongoose.connect(
