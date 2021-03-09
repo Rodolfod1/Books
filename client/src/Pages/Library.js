@@ -4,6 +4,8 @@ import Api from "../Utils/Api"
 import Hero from "../Components/Hero"
 import {Link} from "react-router-dom"
 import Card from "../Components/Card";
+import Row from "../Components/Row"
+import Col from "../Components/Col"
 import "../Components/Style/style.css"
 
 
@@ -50,8 +52,9 @@ const DelBook = id => {
                      <Link className="links" to="/search">
                  <h2>Search for New Book</h2>
                      </Link> 
+        <Row>
 
-       {mybooks !==undefined && mybooks[0].title !==undefined ?(
+        {mybooks !==undefined && mybooks[0].title !==undefined ?(
            mybooks.map(({title,author,id,poster,link,_id})=>{
             return (  
             <Card
@@ -70,6 +73,12 @@ const DelBook = id => {
        ): (<></>)
        }
 
+        </Row>
+
+     
+
+       
+    
 
 
 

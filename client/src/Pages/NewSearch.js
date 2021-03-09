@@ -6,7 +6,7 @@ import Row from "../Components/Row"
 import Col from "../Components/Col"
 import "../Components/Style/style.css"
 import {Link} from "react-router-dom"
-import ActionBtn from "../Components/ActionBtn";
+
 
 
 const NewSearch = () => {
@@ -72,7 +72,14 @@ const AddBook = id => {
     return (
         <div>
             <SearchItem SearchBook={SearchBook} />  
-            <h1 className="action">{selected.Title} by {selected.Author} has been added to your library</h1>       
+  
+        <h1 className="action">{selected.Title} by {selected.Author} has been added to your library</h1>       
+        <Link className="links" to="/home">
+                 <h2>Home</h2>
+                     </Link> 
+                     <Link className="links" to="/library">
+                 <h2>View Library</h2>
+                     </Link>   
     <Row>
       <Col> 
   {/* here  we use the map function   to loop thru the array */}
@@ -102,12 +109,7 @@ const AddBook = id => {
                   </Col>
                   </Row>
       
-                  <Link className="links" to="/home">
-                 <h2>Home</h2>
-                     </Link> 
-                     <Link className="links" to="/library">
-                 <h2>View Library</h2>
-                     </Link>   
+                  
         </div>
     )
 }
