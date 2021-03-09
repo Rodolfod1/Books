@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "MERN Stack for google books",
   "main": "server.js",
+  "engines": {
+    "node": "15.0.1",
+    "npm": "7.0.3"
+  },
   "scripts": {
     "server": "node server.js",
     "heroku-postbuild": "cd client && npm install && npm run build",
