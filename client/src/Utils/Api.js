@@ -16,14 +16,14 @@ import axios from "axios";
 
     //saves books on the database 
      saveBook : (BookData) =>{
-         console.log("requesting");
-         console.log(BookData);
+        //  console.log("requesting");
+        //  console.log(BookData);
         return axios.post("/api/Books", BookData);
     },
 
     // removes book from database 
      deleteBook : (id) =>{
-         console.log("attempting to delete "+id);
+        //  console.log("attempting to delete "+id);
         return axios.delete("/api/Books/" + id)
     }
  }

@@ -25,10 +25,14 @@ const loadAll = () =>{
     .catch((err)=>{console.log(err)})
 }
 
-const DelBook = (id) => {
+const DelBook = id => {
     Api.deleteBook(id)
     .then (res => { 
-        console.log(res)
+        if (res.status ===200){
+            loadAll();
+            console.log("delete successful of: " + id);
+        }
+        else { console.log("something went wrong deleting")}
         
 } )
     .catch((err)=>{console.log(err)})
@@ -48,7 +52,7 @@ const DelBook = (id) => {
                      </Link> 
 
        {mybooks !==undefined && mybooks[0].title !==undefined ?(
-           mybooks.map(({title,author,id,poster,link})=>{
+           mybooks.map(({title,author,id,poster,link,_id})=>{
             return (  
             <Card
                Key={id}
@@ -57,7 +61,7 @@ const DelBook = (id) => {
                image={poster}
                link={link}
                legend=" Remove From Library"
-                                action={()=>DelBook(id)}  
+                                action={()=>DelBook(_id)}  
 
                />
             )
