@@ -12,7 +12,7 @@ const Home = () => {
                  <h1>Search Book</h1>
                      </Link> 
             </button>
-             <button type="button" className="btn btn-primary btn-lg">  <Link className="links" to="/Books">
+             <button type="button" className="btn btn-primary btn-lg">  <Link className="links" to="/Library">
                  <h1>View Library</h1>
                      </Link> 
             </button>

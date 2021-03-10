@@ -74,7 +74,7 @@ const AddBook = id => {
             <SearchItem SearchBook={SearchBook} />  
   
         <h1 className="action">{selected.Title} by {selected.Author} has been added to your library</h1>       
-        <Link className="links" to="/home">
+        <Link className="links" to="/">
                  <h2>Home</h2>
                      </Link> 
                      <Link className="links" to="/library">

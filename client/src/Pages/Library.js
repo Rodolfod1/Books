@@ -46,7 +46,7 @@ const DelBook = id => {
             <Hero backgroundImage="https://images.fastcompany.net/image/upload/w_1280,f_auto,q_auto,fl_lossy/wp-cms/uploads/2019/08/p-1-90385380-google-shares-35-books-in-their-secret-design-library.jpg"  >   
              <h1>My Personal Library </h1> <br/> <h4> Powered by Google Books </h4>
              </Hero>
-             <Link className="links" to="/home">
+             <Link className="links" to="/">
                  <h2>Home</h2>
                      </Link> 
                      <Link className="links" to="/search">
@@ -58,7 +58,7 @@ const DelBook = id => {
            mybooks.map(({title,author,id,poster,link,_id})=>{
             return (  
             <Card
-               Key={id}
+               Key={_id}
                title={title}
                authors={author}
                image={poster}

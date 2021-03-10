@@ -16,10 +16,10 @@ function App() {
         <div className="App">
           <Hero />
           <Switch>
-            <Route exact path={["/", "/Home"]}>
+            <Route exact path="/">
               <Home />
             </Route>
-            <Route exact path={["/Books","/Library"]}>
+            <Route exact path="/Library">
               <Library/>
             </Route>
             <Route  exact path="/Search">
