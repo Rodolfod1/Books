@@ -18,10 +18,7 @@
   },
   "author": "Rodolfo Diaz",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Rodolfod1/Books/issues"
-  },
-  "homepage": "https://github.com/Rodolfod1/Books#readme",
+   
   "dependencies": {
     "axios": "^0.21.1",
     "concurrently": "^6.0.0",
