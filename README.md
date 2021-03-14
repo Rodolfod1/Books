@@ -23,7 +23,7 @@ MIT<br>[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](ht
 * [Link to App](#Link-to-deployed-app)
 
 # Usage:
-    This  application can be used locally localhost:3000 or remotely since it is deployed on `heroku`.
+    This  application can be used locally localhost:3000 or remotely since it is deployed on `cd heroku`.
     The app makes a call to the random user API retrieving a list of 50 users/employees and display them on a table. 
     the table can be sorted out by First name , last name, email, phone number or location country. 
     Also the user can narrow they search filtering the list by last name using a search bar component. 

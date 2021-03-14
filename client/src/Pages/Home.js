@@ -1,6 +1,7 @@
 import React from 'react'
 import Hero from "../Components/Hero"
 import {Link} from "react-router-dom"
+import "../Components/Style/style.css"
 const Home = () => {
     return (
         <div>

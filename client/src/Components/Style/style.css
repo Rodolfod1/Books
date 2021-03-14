@@ -131,12 +131,18 @@ h3 {
 }
 
 .btn-primary {
-    margin:10px,0,10px,0;
-    background-color:  #5b0eeb;
+    margin:10px;
+    background-color:  #000000;
     border-radius: 4%;
     box-shadow:0 0 1px 1px;
     color: #FFFFFF;
     text-decoration: none;
+}
+
+.links {
+ color: #ebb00e;
+ text-decoration: none;
+ padding: 10px;
 }
 
 .action {
