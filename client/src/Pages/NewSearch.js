@@ -28,13 +28,18 @@ const [selected, setSelected]=useState([{}])
         .catch(err => console.log(err) );
   }
 
+
+
 // function to search books and set the state 
-const SearchBook = a =>{
+const SearchBook  = a =>{
     const BookTitle = a.target.value.toLowerCase();
     console.log(BookTitle);
     Api.getBook(BookTitle)
-        .then(res => 
-            setSingleBook(res.data))
+        .then(res => {
+            console.log(res.data.items);
+            setSingleBook(res.data)
+        })
+            
             .catch(err => console.log(err))
 
 }
@@ -85,25 +90,32 @@ const AddBook = id => {
   {/* here  we use the map function   to loop thru the array */}
             {singleBook.items !==undefined && singleBook.items[0].volumeInfo.description !==undefined ? (
                     
-                      singleBook.items.map(({volumeInfo,id}) => {
-                          return (
-                            
-                        <Card
-                            key={id}
-                                title={volumeInfo.title}
-                                authors={volumeInfo.authors}
-                                link={volumeInfo.previewLink}
-                                description={volumeInfo.description}
-                                 image={volumeInfo.imageLinks.thumbnail}
-                                 legend="Add To Library"
-                                action={()=>AddBook(id)}                
-                      />
-               
-                            
-                           
-                          )
+                      singleBook.items.slice(0,4).map(({volumeInfo,id}) => {
+
+                        
+                            return (
+                               
+                                <Card
+                                    key={id}
+                                        title={volumeInfo.title}
+                                        authors={volumeInfo.authors}
+                                        link={volumeInfo.previewLink}
+                                        description={volumeInfo.description}
+                                         image={volumeInfo.imageLinks.thumbnail}
+                                         legend="Add To Library"
+                                        action={()=>AddBook(id)}                
+                              />  )
+
+                        
+                        
+                        
+
+
+
+
                       })
-            ): (<></>)
+            ): (
+            <></>)
     }
                   
                   </Col>
