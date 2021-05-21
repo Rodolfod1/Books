@@ -8,7 +8,7 @@
     "npm": "7.6.1"
   },
   "scripts": {
-    "server": "node server.js",
+    "server": "nodemon server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false  cd client && npm install && npm run build",
     "start": "concurrently \"npm run server\" \"npm start --prefix client\""
   },
@@ -27,6 +27,7 @@
     "mongoose": "^5.11.17"
   },
   "devDependencies": {
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.7"
   }
 }

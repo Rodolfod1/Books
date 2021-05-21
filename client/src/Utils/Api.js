@@ -6,6 +6,7 @@ import axios from "axios";
 
      getBook : BookTitle => {
     //     //call to backend routes 
+    console.log("calling external api");
       return axios.get("/api/gApi/" + BookTitle)
      },
 

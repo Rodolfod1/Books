@@ -6,7 +6,7 @@ const ExtRoutes= require("./gApi");
 //book routes 
 router.use("/Books",bookRoutes);
 //external APi
-router.use("/gApi",ExtRoutes )
+router.use("/gApi",ExtRoutes)
 
 
 module.exports = router;

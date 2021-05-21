@@ -31,8 +31,8 @@ const [selected, setSelected]=useState([{}])
 
 
 // function to search books and set the state 
-const SearchBook  = a =>{
-    const BookTitle = a.target.value.toLowerCase();
+const SearchBook  = (title) =>{
+    const BookTitle = title.toLowerCase();
     console.log(BookTitle);
     Api.getBook(BookTitle)
         .then(res => {
